@@ -1,0 +1,76 @@
+
+body {
+    background-color: #fcfcfc;
+    max-width: 1420px;
+    position: relative;
+}
+h1 {
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #424242;
+    text-align: left;
+    margin: 40px 0 0 40px;
+}
+h2 {
+    color: #868c90;
+    font-size: 16px;
+}
+p {
+    color: #949ea2;
+    font-size: 14px;
+}
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+.card {
+    display: flex;
+    background-color: #fff;
+    border: 2px solid #ececec;
+    border-radius: 5px;
+    margin: 15px;
+    width: 350px;
+    height: 150px;
+    line-height: 10px;
+}
+.avatar {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin: 25px;
+    
+}
+.text-container {
+    margin-top: 30px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(100, 100, 100, 0.4);
+}
+.modal {
+    width: 375px;
+    margin: 15% auto auto;
+    position: relative;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #778;
+    border-radius: 5px;
+    padding: 30px 20px;
+}
+
+.modal-close {
+    position: absolute;
+    right: 15px;
+    top: 5px;
+    cursor: pointer;
+}
+.hidden {
+    display: none;  
+}
