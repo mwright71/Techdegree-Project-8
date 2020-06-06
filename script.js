@@ -4,7 +4,10 @@ const gridContainer = document.querySelector('.grid-container');
 const overlay = document.querySelector('.overlay');
 const modalContainer = document.querySelector('.modal-content');
 const modalClose = document.querySelector('.modal-close');
+let index = 0;
 
+
+// Fetch API//
 fetch(urlAPI)
     .then(response => response.json())
     .then(response => response.results)
@@ -36,6 +39,8 @@ function displayEmployees(employeeData) {
     gridContainer.innerHTML = employeeHTML;
 }
 
+
+// display modal
 function displayModal(index) {
     let {name, dob, phone, email, location:{city, street, state, postcode}, picture} = employees[index];
     let date = new Date(dob.date);
@@ -64,6 +69,59 @@ gridContainer.addEventListener('click', (e) => {
 
 });
 
+
+// close modal
 modalClose.addEventListener('click', (e) => {
     overlay.classList.add('hidden');
 });
+
+
+// Search bar
+let search = document.getElementById('search');
+
+search.addEventListener('keyup', () => {
+    let card = document.getElementsByClassName('card');
+    let names = document.getElementsByClassName('name');
+    const input = search.value.toLowerCase();
+
+    for (let i = 0; i < names.length; i += 1) {
+        if (names[i].textContent.toLowerCase().indexOf(input) > -1) {
+            card[i].style.display = "";
+            } else {
+            card[i].style.display = "none";
+            }
+    }
+});
+
+search.addEventListener('search', () => {
+    let card = document.getElementsByClassName('card');
+    if (event.target.value === '') {
+      for (let i = 0; i < cards.length; i += 1) {
+        card[i].style.display = "";
+      }
+    }
+});
+
+
+
+function displayPrev() {
+    index -= 1;
+    if (index < 0) {
+        index = employees.length - 1;
+    }
+    displayModal(index);
+}
+
+function displayNext() {
+    index += 1;
+    if (index > employees.length - 1) {
+        index = 0;
+    }
+    displayModal(index);
+}
+
+const leftArrow = document.querySelector(".left");
+const rightArrow = document.querySelector(".right");
+
+leftArrow.addEventListener("click", displayPrev);
+rightArrow.addEventListener("click", displayNext);

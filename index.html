@@ -11,6 +11,7 @@
     <body>
         <header>
             <h1>Awesome Startup Employee Directory</h1>
+            <input type="text" id="search" class="search" placeholder="Filter by name...">
         </header>
         <main>
             <div class="grid-container">
@@ -18,12 +19,14 @@
             </div>
         </main>
         <div class="overlay hidden">
+            <img src="images/left-arrow.svg" class="left arrow" alt="left arrow">
             <div class="modal">
                 <button class="modal-close">X</button>
                 <div class="modal-content">
                     <!-- modal info with JS -->
                 </div>
             </div>
+            <img src="images/right-arrow.svg" class="right arrow" alt="right arrow">
         </div>
         <script src="script.js"></script>
     </body>

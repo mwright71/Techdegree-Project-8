@@ -1,8 +1,12 @@
 
 body {
     background-color: #fcfcfc;
-    max-width: 1420px;
+    /* max-width: 1420px; */
     position: relative;
+}
+header {
+    display: flex;
+    justify-content: space-between;
 }
 h1 {
     font-size: 18px;
@@ -73,4 +77,35 @@ p {
 }
 .hidden {
     display: none;  
+    position: relative;
+}
+
+.search {
+    margin:35px 30px 0 0;
+    width: 250px;
+    height: 30px;
+    border-radius: 5px;
+    box-shadow: none;
+}
+
+.search::placeholder {
+    font-style: italic;
+}
+
+.arrow {
+    width: 100px;
+    position: absolute;
+    display: block;
+    z-index: 5;
+    cursor: pointer;
+}
+
+.left{
+    left: 25%;
+    top: 40%;
+}
+
+.right{
+    right: 25%;
+    top: 40%;
 }
